@@ -1,0 +1,80 @@
+%!TEX spellcheck = de_DE
+%!TEX TS-program = xelatex
+%!TEX encoding = UTF-8 Unicode
+
+\documentclass[a4paper, 11pt]{article}
+
+\input{preamble.sty}
+
+\usepackage{color, soul, colortbl}
+\usepackage{tocloft}
+\usepackage{setspace}
+
+\graphicspath{ {./imgs/} } % Autocomplete
+
+% höhrere Zellen
+\renewcommand{\arraystretch}{1.5}
+% Spalte mit fester Breite und in Hellgrau
+\newcolumntype{P}{>{\columncolor{lightgray}}p{4cm}}
+% "Benötigt Änderung"
+\newcommand{\highlight}[1]{\textcolor{yellow!70!blue}{#1}}
+% vierte Aufzählungsebene
+\setcounter{secnumdepth}{4}
+\let\origparagraph\paragraph
+\renewcommand{\paragraph}[1]{\origparagraph{#1}\mbox{}\\}
+
+% ToC Einstellungen
+\renewcommand\cftsecafterpnum{\vskip 5pt} % for spacing after each entry
+\renewcommand\cftsubsecafterpnum{\vskip 5pt} % for spacing after each entry
+\renewcommand\cftsubsubsecafterpnum{\vskip 5pt} % for spacing after each entry
+
+% Daten zum Dokument
+%\title{<< Title >>}
+%\author{<< Author >>}
+
+% Dokument
+\begin{document}
+% --- Insert text here
+
+% "Deckblatt"
+\input{sections/00-pflichtenheft.tex}
+
+% Änderungsverzeichnis
+\input{sections/01-aenderungsverzeichnis.tex}
+
+% Prüfverzeichnis
+\input{sections/02-pruefverzeichnis.tex}
+
+% Inhaltsverzeichnis
+\input{sections/03-toc.tex}
+
+% Einleitung
+\input{sections/10-einleitung.tex}
+
+% Ausgangssituation und Zielsetzung
+\input{sections/11-ausgangssitutation-und-zielsetzung.tex}
+
+% Funktionale Anforderungen
+\input{sections/12-funktionale-anforderungen.tex}
+
+% Nicht funktionale Anforderungen
+\input{sections/13-nicht-funktionale-anforderungen.tex}
+
+% Systemarchitektur und Modellierung
+\input{sections/14-systemarchitektur-und-modellierung.tex}
+
+% Einbettung in die Gesamtsystemarchitektur
+\input{sections/15-einbettung-in-die-gesamtsystemarchitektur.tex}
+
+% Lieferumfang (zu liefernde Produkte, Zwischenergebnisse und Dokumentation)
+\input{sections/16-lieferumfang.tex}
+
+% Abnahmekriterien
+\input{sections/17-abnahmekriterien.tex}
+
+% Glossar, Abkürzungsverzeichnis
+\input{sections/90-abkuerungsverzeichnis.tex}
+
+% ---
+
+\end{document}

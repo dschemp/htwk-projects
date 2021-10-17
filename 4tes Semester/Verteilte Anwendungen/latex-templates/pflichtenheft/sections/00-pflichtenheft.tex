@@ -1,0 +1,33 @@
+\setcounter{section}{0}
+\section{Pflichtenheft}
+
+\pagebreak
+
+\begin{tabularx}{\textwidth}{| P | X |}
+    \hline
+    Dokument                             & Pflichtenheft                               \\ \hline
+    Projektleiter                        & \highlight{Vorname Nachname}                \\ \hline
+    Projekt                              & \highlight{Projektname}                     \\ \hline
+    \multicolumn{2}{c}{} \\ \hline
+    Verantwortlich für dieses Dokument   & \highlight{Vorname Name}                    \\ \hline
+    Erstellt am\footnotemark             & \highlight{TT.MM.JJJJ}                      \\ \hline
+    Zuletzt geändert\footnotemark        & \highlight{TT.MM.JJJJ}                      \\ \hline
+    Bearbeitungsstand\footnotemark & 
+        {
+            \noindent % Ich habe keinen Plan, wie ich den Platz links von der kleinen Tabelle hier weg bekomme, ohne dieses Padding auch für alle anderen Zellen in der großen Tabelle gleich mitzunuken.
+            \begin{tabular}{| c | l |}
+                \highlight{X} & In Bearbeitung  \\ \hline
+                  & Vorgelegt       \\ \hline
+                  & Fertig gestellt
+            \end{tabular}
+        }
+    \\ \hline
+    Dateiablage                          & \highlight{Dateiablage}                     \\ \hline
+\end{tabularx}
+
+% Footnotes müssen außerhalb von floating environments wie table oder figure gemacht werden. Ansonsten kann man problemlos \footnote{} nutzen
+\footnotetext{Datum, an dem das Dokument erstmalig erzeugt wurde}
+\footnotetext{Datum der letzten Änderung}
+\footnotetext{Beachten Sie die Hinweise in der Vorlesung bzw. im Wiki.}
+
+\pagebreak
